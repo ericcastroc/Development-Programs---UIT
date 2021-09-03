@@ -79,3 +79,5 @@ public class ImcPessoa {
               "\nImc:" +calcularImc();
     }
 }
+
+/* Operador Ternario: +((getSexo()=='m')?"Masculino":"Feminino")+*/ 
