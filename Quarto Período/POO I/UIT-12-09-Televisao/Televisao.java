@@ -49,16 +49,20 @@ public class Televisao {
     }
 
     public void aumentarVolume(){
-        if(ligada==true && volume>=0 && volume<volumeMaximo){
-            volume++;
-        }else{
-            volume=volumeMaximo;
+        if(ligada==true){
+            if(volume>=0 && volume<volumeMaximo){
+                volume++;
+            }else{
+                volume=volumeMaximo;
+            }
         }
     }
 
     public void abaixarVolume(){
-        if(ligada==true && volume>0 && volume<=volumeMaximo){
-            volume--;
+        if(ligada==true){
+            if(volume>0 && volume<=volumeMaximo){
+                volume--;
+            }
         }
     }
     public int getCanal() {
@@ -66,24 +70,30 @@ public class Televisao {
     }
 
     public void setCanal(int canal) {
-        if(ligada==true && canal>0 && canal<=quantidadeCanais){
-        this.canal = canal;
+        if(ligada==true){
+            if(canal>0 && canal<=quantidadeCanais){
+            this.canal = canal;
+            }
         }
     }
 
     public void aumentarCanal(){
-        if(ligada==true && canal>=0 && canal<quantidadeCanais){
-            canal++;
-        }else if(canal>=quantidadeCanais){
-            canal=0;
+        if(ligada==true){
+            if(canal>=0 && canal<quantidadeCanais){
+                canal++;
+            }else if(canal>=quantidadeCanais){
+                canal=0;
+            }
         }
     }
 
     public void abaixarCanal(){
-        if(ligada==true && canal>0 && canal<quantidadeCanais){
-            canal--;
-        }else if(canal==0){
-            canal=quantidadeCanais;
+        if(ligada==true){
+            if(canal>0 && canal<=quantidadeCanais){
+                canal--;
+            }else if(canal==0){
+                canal=quantidadeCanais;
+            }
         }
     }
 
@@ -114,9 +124,9 @@ public class Televisao {
 
 
     public String imprimeDetalhe(){
-        return  " O a teleevisão está "+ (isLigada()?"ligado":"desligado ") +
-                "\n Volume: " + getVolume() + 
-                "\n Canal: " + getCanal();
+        return  "O a teleevisão está "+ (isLigada()?"ligado":"desligado ") +
+                "\nVolume: " + getVolume() + 
+                "\nCanal: " + getCanal();
     }
 
 
