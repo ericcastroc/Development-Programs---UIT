@@ -72,7 +72,7 @@ public class Televisao {
     }
 
     public void aumentarCanal(){
-        if(canal>=0 && canal<quantidadeCanais){
+        if(ligada==true && canal>=0 && canal<quantidadeCanais){
             canal++;
         }else if(canal>=quantidadeCanais){
             canal=0;
@@ -80,7 +80,7 @@ public class Televisao {
     }
 
     public void abaixarCanal(){
-        if(canal>0 && canal<quantidadeCanais){
+        if(ligada==true && canal>0 && canal<quantidadeCanais){
             canal--;
         }else if(canal==0){
             canal=quantidadeCanais;
