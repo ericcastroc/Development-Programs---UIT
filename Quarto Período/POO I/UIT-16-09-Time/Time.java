@@ -32,8 +32,7 @@ public class Time {
     }
 
     public void setSerie(String serie) {
-        serie=serie.toUpperCase();
-        if(serie.charAt(0)>='A' && serie.charAt(0)<='E'){
+        if(serie.toUpperCase().charAt(0)>='A' && serie.toUpperCase().charAt(0)<='E'){
             this.serie = serie;
         }else{
             System.out.println("Não existe essa Serie. Somente A, B, C, D ou E");
@@ -54,7 +53,9 @@ public class Time {
 
     public String imprimeDetalhe(){
         return "\nNome do Time:" +getNome() +
-               "\nSerie em que ele joga:" + getSerie() +
+               "\nSerie em que ele joga:" + getSerie().toUpperCase() +
                "\nNumero de jogadores:" +getNumeroDeJogadores() + "\n\n";
     }
+
+    
 }
