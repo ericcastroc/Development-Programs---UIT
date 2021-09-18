@@ -33,7 +33,7 @@ public class UIT1209Televisao {
             System.out.println("4-Up Mudar Canal");
             System.out.println("5-Down Mudar Canal");
             System.out.println("6-Aumentar Volume ");
-            System.out.println("7- Abaixar Volume");
+            System.out.println("7-Abaixar Volume");
             System.out.println("8-Imprimir Detalhe");
             opcao=input.nextInt();
             switch(opcao){

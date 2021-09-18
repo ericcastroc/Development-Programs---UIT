@@ -49,29 +49,24 @@ public class Televisao {
     }
 
     public void aumentarVolume(){
-        if(ligada==true){
-            if(volume>=0 && volume<volumeMaximo){
+        if(ligada==true && volume<volumeMaximo){
                 volume++;
-            }else{
-                volume=volumeMaximo;
-            }
         }
     }
 
     public void abaixarVolume(){
-        if(ligada==true){
-            if(volume>0 && volume<=volumeMaximo){
-                volume--;
-            }
+        if(ligada==true && volume>0){
+                volume--;         
         }
     }
+
     public int getCanal() {
         return canal;
     }
 
     public void setCanal(int canal) {
         if(ligada==true){
-            if(canal>0 && canal<=quantidadeCanais){
+            if(canal>1 && canal<=quantidadeCanais){
             this.canal = canal;
             }
         }
@@ -79,24 +74,15 @@ public class Televisao {
 
     public void aumentarCanal(){
         if(ligada==true){
-            if(canal>=0 && canal<quantidadeCanais){
-                canal++;
-            }else if(canal>=quantidadeCanais){
-                canal=0;
-            }
+            canal = (canal % quantidadeCanais) + 1;
         }
     }
 
     public void abaixarCanal(){
         if(ligada==true){
-            if(canal>0 && canal<=quantidadeCanais){
-                canal--;
-            }else if(canal==0){
-                canal=quantidadeCanais;
-            }
+            canal = canal == 1 ? quantidadeCanais : canal -1;
         }
     }
-
     
 
     public int getVolumeMaximo() {
