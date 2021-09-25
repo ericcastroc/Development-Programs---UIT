@@ -69,7 +69,7 @@ public class UIT0309Celular {
                     celular.abaixarSom();
                     break;
                 case 7:
-                    celular.jogar();
+                    celular.jogar(input.nextInt(), input.nextInt());
                     break;
                 case 8:
                     System.out.println(celular.imprimeDetalhe());
