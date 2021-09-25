@@ -12,11 +12,11 @@ Encapsular todos os atributos da classe (criar os métodos set e get).
 Modifique as opções para que possa escolher quantos andares subir ou descer e quantas pessoas irão entrar ou sair através de sobrecarga.
 */
 
-
 import java.util.Scanner;
+
 public class UIT2409Elevador {
-    
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
 
@@ -29,17 +29,21 @@ public class UIT2409Elevador {
 
         System.out.println(elevador);
 
-        int opcao=0;
-        do{
+        int opcao = 0;
+        do {
             System.out.println("Digite o que deseja:");
             System.out.println("0-Sair");
             System.out.println("1-Entrar uma pessoa no elevador:");
-            System.out.println("2-Sair uma pessoa do elevador ");
-            System.out.println("3-Subir Andar");
-            System.out.println("4-Descer Andar");
-            System.out.println("5-Imprimir Detalhes");
-            opcao=input.nextInt();
-            switch(opcao){
+            System.out.println("2-Informe quantas pessoas vão entrar no elevador:");
+            System.out.println("3-Sair uma pessoa do elevador ");
+            System.out.println("4-Informe quantas pessoas vão sair do elevador:");
+            System.out.println("5-Subir Andar");
+            System.out.println("6-Informe quantos andares vão querer subir:");
+            System.out.println("7-Descer Andar");
+            System.out.println("8-Informe quantos andares vão querer descer:");
+            System.out.println("9-Imprimir Detalhes");
+            opcao = input.nextInt();
+            switch (opcao) {
                 case 0:
                     System.out.println("Muito Obrigado ate Mais.");
                     break;
@@ -47,23 +51,37 @@ public class UIT2409Elevador {
                     elevador.entrar();
                     break;
                 case 2:
-                    elevador.sair();
+                    System.out.println("Informe:");
+                    elevador.entrar(input.nextInt());
                     break;
                 case 3:
-                    elevador.sobe();
+                    elevador.sair();
                     break;
                 case 4:
-                    elevador.desce();
+                    System.out.println("Informe:");
+                    elevador.sair(input.nextInt());
                     break;
                 case 5:
+                    elevador.sobe();
+                    break;
+                case 6:
+                    elevador.sobe(input.nextInt());
+                    break;
+                case 7:
+                    elevador.desce();
+                    break;
+                case 8:
+                    elevador.desce(input.nextInt());
+                    break;
+                case 9:
                     System.out.println(elevador.imprimeDetalhe());
                     break;
                 default:
                     System.out.println("Opção Inválida");
-            }        
-        }while(opcao!=0);
-        
+            }
+        } while (opcao != 0);
+
         input.close();
     }
-    
+
 }

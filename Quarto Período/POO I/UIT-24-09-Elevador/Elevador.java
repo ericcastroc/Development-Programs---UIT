@@ -61,9 +61,9 @@ public class Elevador {
     public void entrar(int valor) {
         if (pessoasElevador < capacidadeDoElevador) {
             if (pessoasElevador + valor <= capacidadeDoElevador) {
-            pessoasElevador += valor;
-            }else{
-                pessoasElevador=capacidadeDoElevador;
+                pessoasElevador += valor;
+            } else {
+                pessoasElevador = capacidadeDoElevador;
             }
         }
     }
@@ -74,15 +74,53 @@ public class Elevador {
         }
     }
 
+    public void sair(int valor) {
+        if (pessoasElevador > 0) {
+            if (pessoasElevador - valor > 0) {
+                pessoasElevador -= valor;
+            } else {
+                pessoasElevador = 0;
+            }
+        }
+    }
+
     public void sobe() {
-        if (andarAtual < totalDeAndares) {
-            andarAtual++;
+        if (pessoasElevador > 0) {
+            if (andarAtual < totalDeAndares) {
+                andarAtual++;
+            }
+        }
+    }
+
+    public void sobe(int valor) {
+        if (pessoasElevador > 0) {
+            if (andarAtual < totalDeAndares) {
+                if (andarAtual + valor <= totalDeAndares) {
+                    andarAtual += valor;
+                } else {
+                    andarAtual = totalDeAndares;
+                }
+            }
         }
     }
 
     public void desce() {
-        if (andarAtual > 0) {
-            andarAtual--;
+        if (pessoasElevador > 0) {
+            if (andarAtual > 0) {
+                andarAtual--;
+            }
+        }
+    }
+
+    public void desce(int valor) {
+        if (pessoasElevador > 0) {
+            if (andarAtual > 0) {
+                if (andarAtual - valor >= 0) {
+                    andarAtual -= valor;
+                } else {
+                    andarAtual = 0;
+                }
+            }
         }
     }
 
