@@ -117,7 +117,7 @@ public class Celular {
             } else {
                 return false;
             }
-        }
+        } return false;
     }
 
     public String imprimeDetalhe() {
