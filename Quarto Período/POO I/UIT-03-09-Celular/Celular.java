@@ -16,6 +16,10 @@ se ganhou ou perdeu.
 
 Na aula do dia 10, alguns alunos deverão apresentar os projetos.  */
 
+/* Modifique a classe celular e altere o jogo para poder jogar Pedra, Papel e Tesoura. 
+Também deverá ser criado um campo Id celular que deverá ser incrementado automaticamente e também um método estático mostraQtdeCelulares() 
+que retorna quantos celulares estão instanciados! */
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -25,15 +29,19 @@ public class Celular {
     private int nivelBateria;
     private boolean ligado;
     private int som;
+    private static int numeroInstancias = 0;
+    private static int idCelular = 0;
 
     Scanner input = new Scanner(System.in);
 
-    public String getModelo() {
-        return modelo;
+    public Celular(String modelo) {
+        this.modelo = modelo;
+        idCelular+=1;
+        numeroInstancias++;
     }
 
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
+    public String getModelo() {
+        return modelo;
     }
 
     public int getNivelBateria() {
@@ -106,18 +114,51 @@ public class Celular {
         }
     }
 
+    // Jogar Par ou Impar
     // usuario passa o numero 0 para par e 1 para impar
-    public boolean jogar(int num, int parImpar) {
+    public boolean jogarParImpar(int num, int parImpar) {
         if (ligado) {
             Random aleatorio = new Random();
             int numPc = (aleatorio.nextInt()) % 2;
             int soma = numPc + num;
+            nivelBateria--;
             if (soma % 2 == parImpar) {
                 return true;
             } else {
                 return false;
             }
-        } return false;
+        }
+        return false;
+    }
+
+    // Jogar Jogo da velha
+    // 0-Pedra 1-Papel 2-Tesoura
+    public String jogarPeraPapelTesoura(int valor) {
+        if (ligado && nivelBateria > 1) {
+            Random aleatorio = new Random();
+            int num = (aleatorio.nextInt(3));
+            nivelBateria--;
+            if (valor == num) {
+                return "Epate";
+            } else if (valor == 0 && num == 1) {
+                return "Voce perdeu\n" + "Sua escolha:" + valor + "\nEscolha do Oponente:" + num;
+            } else if (valor == 0 && num == 2) {
+                return "Voce ganhou\n" + "Sua escolha:" + valor + "\nEscolha do Oponente:" + num;
+            } else if (valor == 1 && num == 0) {
+                return "Voce ganhou\n" + "Sua escolha:" + valor + "\nEscolha do Oponente:" + num;
+            } else if (valor == 1 & num == 2) {
+                return "Voce perdeu\n" + "Sua escolha:" + valor + "\nEscolha do Oponente:" + num;
+            } else if (valor == 2 && num == 0) {
+                return "Voce perdeu\n" + "Sua escolha:" + valor + "\nEscolha do Oponente:" + num;
+            } else if (valor == 2 && num == 1) {
+                return "Voce ganhou\n" + "Sua escolha:" + valor + "\nEscolha do Oponente:" + num;
+            }
+        }
+        return "Telefone desligado ou sem bateria";
+    }
+
+    public String qtdCelular(){
+        return "Quantidade de Celulares: " + idCelular;
     }
 
     public String imprimeDetalhe() {
