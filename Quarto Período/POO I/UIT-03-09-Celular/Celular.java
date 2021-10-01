@@ -40,6 +40,10 @@ public class Celular {
         numeroInstancias++;
     }
 
+    public int getNumeroInstancias(){
+        return numeroInstancias;
+    }
+
     public String getModelo() {
         return modelo;
     }
