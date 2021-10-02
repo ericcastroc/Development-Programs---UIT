@@ -1,5 +1,5 @@
 import java.util.Random;
-import java.util.Scanner;
+
 
 /*Criar um array de inteiros com 10 posições, adicionar números aleatórios de 1 a 100 
 neste array. Após mostrar o maior elemento. */
