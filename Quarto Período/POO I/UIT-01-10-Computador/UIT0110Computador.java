@@ -62,11 +62,10 @@ public class UIT0110Computador {
                     break;
                 case 1:
                     for (int i = 0; i < computador.length; i++) {
-                        System.out.println("Computadores Disponiveis:" + (i+1) + "º" + computador[i].toString());
+                        System.out.println("Computadores Disponiveis:" + (i + 1) + "º" + computador[i].toString());
                     }
                     System.out.println("Informe qual computador acessar");
                     num = input.nextInt() - 1;
-
                     break;
                 case 2:
                     computador[num].ligar();
