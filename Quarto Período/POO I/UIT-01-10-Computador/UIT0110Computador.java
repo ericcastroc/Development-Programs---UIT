@@ -13,6 +13,7 @@ import java.util.Scanner;
 
 public class UIT0110Computador {
     static int qtdRamPermitida = 512;
+
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
@@ -37,36 +38,45 @@ public class UIT0110Computador {
         }
 
         for (int i = 0; i < computador.length; i++) {
-            if(computador[i].getTamanhoRam()>=qtdRamPermitida){
-            System.out.println(computador[i].toString());
+            if (computador[i].getTamanhoRam() >= qtdRamPermitida) {
+                System.out.println(computador[i].toString());
             }
         }
 
         int opcao = 0;
         System.out.println("Informe qual computador quer exibir:");
-        int num = input.nextInt()-1;
+        int num = input.nextInt() - 1;
         do {
 
             System.out.println("Digite o que deseja:");
             System.out.println("0-Sair");
-            System.out.println("1-Ligar");
-            System.out.println("2-Desligar");
-            System.out.println("3-Estado");
-            System.out.println("4-Informaçoes");
+            System.out.println(("1-Mudar de Computador:"));
+            System.out.println("2-Ligar");
+            System.out.println("3-Desligar");
+            System.out.println("4-Estado");
+            System.out.println("5-Informaçoes");
             opcao = input.nextInt();
             switch (opcao) {
                 case 0:
                     System.out.println("Muito Obrigado ate Mais.");
                     break;
                 case 1:
-                    computador[1].ligar();
+                    for (int i = 0; i < computador.length; i++) {
+                        System.out.println("Computadores Disponiveis:" + (i+1) + "º" + computador[i].toString());
+                    }
+                    System.out.println("Informe qual computador acessar");
+                    num = input.nextInt() - 1;
+
                     break;
                 case 2:
-                    computador[1].desligar();
+                    computador[num].ligar();
+                    break;
                 case 3:
+                    computador[num].desligar();
+                case 4:
                     System.out.println(computador[num].estadoComputador());
                     break;
-                case 4:
+                case 5:
                     System.out.println(computador[num].toString());
                     break;
                 default:
