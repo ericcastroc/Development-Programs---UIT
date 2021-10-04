@@ -54,8 +54,8 @@ public class Computador {
     }
 
     public String toString() {
-        return "Computador [fabricante=" + fabricante + ", numProcessadores=" + numProcessadores + ", tamanhoHd="
-                + tamanhoHd + ", tamanhoRam=" + tamanhoRam + "]";
+        return "Computador [Fabricante=" + fabricante + ", Numero de Processadores=" + numProcessadores + ", Tamanho do HD="
+                + tamanhoHd + ", Tamanho da Memoria Ram=" + tamanhoRam + "]";
     }
 
     public String estadoComputador(){
