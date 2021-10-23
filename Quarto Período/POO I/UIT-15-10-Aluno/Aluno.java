@@ -12,7 +12,7 @@ public class Aluno {
     private String nome;
     private int idade;
     private double nota;
-    private String sexo;
+    Sexo sexo;
 
     public Aluno(String nome, int idade, int matricula, double nota, String sexo){
         this.nome = nome;

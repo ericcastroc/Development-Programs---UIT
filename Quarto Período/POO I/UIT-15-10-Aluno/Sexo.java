@@ -1,11 +1,11 @@
-public enum EnumSexo{
+public enum Sexo{
 
     MASCULINO("Masculino"),
     FEMININO("Feminino");
 
     private String descricao;
 
-    EnumSexo(String descricao ){
+    Sexo(String descricao ){
         this.descricao = descricao;
     }
 

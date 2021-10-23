@@ -41,8 +41,9 @@ public class main {
                     int matricula = input.nextInt();
                     System.out.println("Nota:");
                     double nota = input.nextDouble();
-                    System.out.println("Sexo:");
-                    String sexo = input.nextLine();
+                    input.nextLine();
+                    System.out.println("Digite o Sexo: 1 - Masculino \t 2 - feminino");
+                    int sexo = input.nextLine();
                     Aluno aluno = new Aluno(nome, idade, matricula, nota, sexo);
 
                     sala.adicionarAluno(aluno);
@@ -51,7 +52,7 @@ public class main {
 
                         System.out.println("Informe a Matricula do aluno: ");
                         int opc = input.nextInt();
-                        for(Aluno )
+                        
 
                     break;
                 case 4:

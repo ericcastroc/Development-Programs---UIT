@@ -11,7 +11,7 @@ public class Sala {
     private Aluno aluno;
     private int qtdAlunos;
 
-    ArrayList<Aluno> Alunos = new ArrayList<>();
+    private ArrayList<Aluno> Alunos = new ArrayList<>();
 
     public ArrayList<Aluno> getAlunos() {
         return Alunos;
@@ -33,11 +33,23 @@ public class Sala {
         Alunos.add(aluno);
     }
 
-    public void removerAluno(Aluno aluno){
-        
-        Alunos.remove(aluno.getMatricula());
+    public void removerAluno(String mat){
+        for(Aluno a : alunos){
+            if(a.getMatricula().equals(mat)){
+                alunos.remove(a);
+            }
+        }
     }
     
+    public Aluno getMelAluno(){
+        Aluno aluno = alunos.get(0);
+        for(Aluno a : alunos){
+            if(a.getNota()>aluno.getNota()){
+                aluno = a;
+            }
+        }
+        return aluno;
+    }
     public String exibirAlunos() {
         String alunosInf = "\t";
     
