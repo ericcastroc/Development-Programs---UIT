@@ -15,55 +15,61 @@ Crie uma classe Testa com um método main e um menu para interagir com a loja.
 package Questao04;
 
 public class Produto {
-    
+
     private String nome;
     private int qtdeAtual;
     private int qtdeMinima;
-    
-    
-
+    private int id = 0;
+    private static int count = 1;
 
     public Produto(String nome, int qtdeMinima, int qtdeAtual) {
         this.nome = nome;
         this.qtdeAtual = qtdeAtual;
         this.qtdeMinima = qtdeMinima;
+        id = +count;
+        count++;
     }
 
-    public Produto(){
+    public Produto() {
 
     }
 
     public String getNome() {
         return nome;
     }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
+
     public int getQtdeAtual() {
         return qtdeAtual;
     }
+
     public void setQtdeAtual(int qtdeAtual) {
-        if(qtdeAtual > 0){
-        this.qtdeAtual = qtdeAtual;
-        }
-    }
-    public int getQtdeMinima() {
-        return qtdeMinima;
-    }
-    public void setQtdeMinima(int qtdeMinima) {
-        if(qtdeMinima > 0){
-        this.qtdeMinima = qtdeMinima;
+        if (qtdeAtual > 0) {
+            this.qtdeAtual = qtdeAtual;
         }
     }
 
-    public void repoe(int qtde){
-        qtdeAtual+=qtde;
+    public int getQtdeMinima() {
+        return qtdeMinima;
+    }
+
+    public void setQtdeMinima(int qtdeMinima) {
+        if (qtdeMinima > 0) {
+            this.qtdeMinima = qtdeMinima;
+        }
+    }
+
+    public void repoe(int qtde) {
+        qtdeAtual += qtde;
     }
 
     @Override
     public String toString() {
-        return "Produto [Nome=" + nome + ", Quantidade Atual=" + qtdeAtual + ", Quantidade Minima=" + qtdeMinima + "]";
+        return "Produto [Id= " + id + ", Nome=" + nome + ", Quantidade Atual=" + qtdeAtual + ", Quantidade Minima="
+                + qtdeMinima + "]";
     }
 
-    
 }

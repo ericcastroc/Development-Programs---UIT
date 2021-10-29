@@ -22,66 +22,69 @@ public class Loja {
     private Produto produto;
     private ArrayList<Produto> Produtos = new ArrayList<>();
 
-    public Produto getProduto(){
+    public Produto getProduto() {
         return produto;
     }
 
     public String getNome() {
         return nome;
     }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
+
     public ArrayList<Produto> getProdutos() {
         return Produtos;
     }
+
     public void setProdutos(ArrayList<Produto> produtos) {
         Produtos = produtos;
     }
 
-    public String mostraQuantidadeProdutos(){
+    public String mostraQuantidadeProdutos() {
         String produtoInf = "\t";
 
-        for ( Produto a : Produtos){
+        for (Produto a : Produtos) {
             produtoInf += "\n" + a.toString();
         }
         return produtoInf;
     }
 
-    public String mostraQuantidadeProdutos(String nome){
+    public String mostraQuantidadeProdutos(String nome) {
         String produtoInf = "\t";
 
-        for (Produto a : Produtos){
-            if(a.getNome().equals(nome)){
-            return a.toString();
-            }
-        }
-        return produtoInf;
-    } 
-
-    public String mostraProdutosAbaixoDoMinimo(){
-        String produtoInf = "\t";
-
-        for (Produto a : Produtos){
-            if(a.getQtdeAtual() < a.getQtdeMinima()){
+        for (Produto a : Produtos) {
+            if (a.getNome().equals(nome)) {
                 produtoInf += "\n" + a.toString();
             }
         }
         return produtoInf;
     }
 
-    public int totalProdutos(){
-        int  produtoInf = 0;
+    public String mostraProdutosAbaixoDoMinimo() {
+        String produtoInf = "\t";
 
-        for(Produto a : Produtos){
-            
-            produtoInf+=a.getQtdeAtual();
-            
+        for (Produto a : Produtos) {
+            if (a.getQtdeAtual() < a.getQtdeMinima()) {
+                produtoInf += "\n" + a.toString();
+            }
         }
         return produtoInf;
     }
 
-    public void adicionarProduto(Produto produto){
+    public int totalProdutos() {
+        int produtoInf = 0;
+
+        for (Produto a : Produtos) {
+
+            produtoInf += a.getQtdeAtual();
+
+        }
+        return produtoInf;
+    }
+
+    public void adicionarProduto(Produto produto) {
         Produtos.add(produto);
     }
 

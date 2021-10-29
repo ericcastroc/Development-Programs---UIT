@@ -20,9 +20,9 @@ public class main {
 
     public static void main(String[] args) {
         Loja loja = new Loja();
+
         Scanner input = new Scanner(System.in);
 
-        
         int opcao = 0;
         do {
             System.out.println("Digite o que deseja:");
@@ -31,7 +31,8 @@ public class main {
             System.out.println("2 - Mostrar Quantiddade de Pordutos:");
             System.out.println("3 - Mostrar Quantidade de Produtos Expecifico:");
             System.out.println("4 - Mostrar Produtos abaixo do minimo:");
-            System.out.println("5 - Total de Produtos:");
+            System.out.println("5 - Repor quantidade de produtos:");
+            System.out.println("6 - Total de Produtos:");
             opcao = input.nextInt();
             switch (opcao) {
             case 0:
@@ -44,7 +45,7 @@ public class main {
                 System.out.print("Quantidade Minima de Produtos:");
                 int qtdeMinima = input.nextInt();
                 System.out.print("Quantidade Atual de Produtos:");
-                int qtdeAtual = input.nextInt(); 
+                int qtdeAtual = input.nextInt();
 
                 Produto produto = new Produto(nome, qtdeMinima, qtdeAtual);
                 loja.adicionarProduto(produto);
@@ -56,14 +57,20 @@ public class main {
                 input.nextLine();
                 System.out.print("Informe o nome do Produto:");
                 nome = input.nextLine();
-                System.out.println(loja.mostraQuantidadeProdutos(nome)); 
+                System.out.println(loja.mostraQuantidadeProdutos(nome));
                 break;
             case 4:
                 System.out.println(loja.mostraProdutosAbaixoDoMinimo());
                 break;
             case 5:
+                System.out.print("Informe o nome do Produto:");
+                nome = input.nextLine();
+                System.out.println("Informe a quantidade que ira repor: ");
+               
+                break;
+            case 6:
                 System.out.println("A soma de todos os itens: " + loja.totalProdutos());
-                break;    
+                break;
             }
         } while (opcao != 0);
 
