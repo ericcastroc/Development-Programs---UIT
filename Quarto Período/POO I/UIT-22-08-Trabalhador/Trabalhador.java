@@ -7,6 +7,9 @@ public class Trabalhador{
     private String nome;
     private double salario;
     
+    
+
+
     public int getMatricula() {
         return matricula;
     }
@@ -27,6 +30,7 @@ public class Trabalhador{
         this.salario = salario;
         }
     }
+    
     public String imprimeDetalhe(){
         return "Nome:" + getNome() +
                "\tMatricula:" + getMatricula() +
@@ -34,5 +38,5 @@ public class Trabalhador{
 
     }
     
-    
+
 }
