@@ -1,0 +1,1 @@
+"""Leia do usuário os nomes e preços de produtos eletrônicos. Crie uma lista com essas informações, de acordo com a estrutura a seguir"""
