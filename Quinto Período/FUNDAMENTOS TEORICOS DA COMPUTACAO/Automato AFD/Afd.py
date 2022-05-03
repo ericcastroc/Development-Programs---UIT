@@ -4,7 +4,7 @@ estadoInicial = 'S0'
 estadoFinal = 'S0'
 automato = '1001'
 
-class LerAfd:
+class Afd:
     def __init__(self, automato, estadoInicial, alfabeto, transicao, estadoFinal):
         self.automato = automato
         self.estadoInicial = estadoInicial
@@ -35,7 +35,7 @@ class LerAfd:
 
             
 
-sequenciaAutomato = LerAfd(automato, estadoInicial, alfabeto, transicao, estadoFinal)
+sequenciaAutomato = Afd(automato, estadoInicial, alfabeto, transicao, estadoFinal)
 print("As transçoes: ",sequenciaAutomato.lerAfd() +"\t|"+" O Estado Final e:",estadoFinal)
 sequencialAutomato = sequenciaAutomato.lerAfd()
 print("Esse Automato e: ", sequenciaAutomato.validarAfd(sequencialAutomato))
